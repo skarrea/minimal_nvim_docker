@@ -8,6 +8,8 @@ RUN apt-get update && apt-get install -y \
 
 # Optionally copy config into image (or mount later)
 # COPY ./nvim /root/.config/nvim
+RUN mkdir -p /root/.config/nvim
+RUN git clone https://github.com/skarrea/minimal_nvim_docker.git /root/.config/nvim
 
 WORKDIR /workspace
 
